@@ -1,0 +1,30 @@
+<div class="main-container">
+    <table class="table table-striped ">
+        <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Nome</th>
+            <th scope="col">CNPJ</th>
+            <th scope="col">Data</th>
+            <th scope="col">Opções</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let company of companies; index as i">
+            <th scope="row">{{ i + 1 }}</th>
+            <td>{{ company.name }}</td>
+            <td>{{ company.cnpj }}</td>
+            <td>{{ company.data_cadastro }}</td>
+            <td>
+                <div>
+                    <a routerLink="/editar/${company.id}" style="margin-right: 10px;"><button class="btn btn-warning">Editar</button></a>
+                    <a routerLink="/deletar/${company.id}"><button class="btn btn-danger">Excluir</button></a>
+                </div>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    <div>
+        <a routerLink="/cadastrar"><button class="btn btn-primary">Cadastrar Empresa</button></a>
+    </div>
+</div>
